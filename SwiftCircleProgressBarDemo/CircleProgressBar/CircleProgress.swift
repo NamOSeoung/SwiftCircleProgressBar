@@ -9,6 +9,9 @@
 import UIKit
 
 @IBDesignable class CircleProgress: UIControl {
+    let ripplerColor:UIColor = UIColor(red: 244/255, green: 43/255, blue: 78/255, alpha: 1)
+    let noneCircleColor:UIColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+    
     @IBInspectable var mainColor: UIColor = UIColor.gray {
         didSet {
             self.setNeedsDisplay()
@@ -56,14 +59,14 @@ import UIKit
         self.backgroundColor = .clear
         self.layer.addSublayer(self.backLayer!)
         self.layer.addSublayer(self.foreLayer!)
-        self.mainColor = UIColor.gray
-        self.forgroundColor = UIColor.blue
+        self.mainColor = noneCircleColor
+        self.forgroundColor = ripplerColor
         self.progress = 0.3
     }
     
     override func awakeFromNib() {
-        self.mainColor = UIColor.gray
-        self.forgroundColor = UIColor.blue
+        self.mainColor = noneCircleColor
+        self.forgroundColor = ripplerColor
         self.progress = 0.3
     }
     
